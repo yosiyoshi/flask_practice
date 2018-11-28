@@ -1,11 +1,16 @@
-﻿# frask_practice
+# Flask Practice
 
 Practice using frask to develop web-app.
 
 
-# requirements
+# Requirements
 /Python 3.x
 
-/frask
+/flask
 
 /ynltk: from https://github.com/yosiyoshi/IntelligenTXT
+
+# Screenshots
+![Editing](https://github.com/yosiyoshi/frask_practice/blob/master/flask.png "Editing")
+
+![Localhost-ing](https://github.com/yosiyoshi/frask_practice/blob/master/flask2.png "Localhost-ing")
