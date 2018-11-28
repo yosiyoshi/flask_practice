@@ -1,6 +1,6 @@
 # Flask Practice
 
-Practice using frask to develop web-app.
+Practice using flask to develop web-app.
 
 
 # Requirements
