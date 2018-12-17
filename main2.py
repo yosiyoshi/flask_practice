@@ -18,7 +18,9 @@ def result():
       getkey = request.form['key']
       getvalue = request.form['value']
       s=OmnibusStem()
-      result2 = s.compStemmer(getkey.lower(),getvalue.lower())
+      input1 = getkey.replace(" ", "")
+      input2 = getvalue.replace(" ", "")
+      result2 = s.compStemmer(input1.lower(),input2.lower())
       return 'Result: {}'.format(result2)
 
 if __name__ == "__main__":
