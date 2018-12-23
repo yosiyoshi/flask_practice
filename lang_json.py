@@ -1,11 +1,17 @@
 ﻿# e.g.: curl -i -H "Content-Type: application/json" -d "{\"amount\":5000.0,\"description\":\"salary\"}" http://localhost:5000/data
 from flask import Flask, jsonify, request
 from ynltk import Langvowel
+from collections import Counter
+import json
 
 app = Flask(__name__)
 l = Langvowel()
 
 data = []
+
+@app.route('/')
+def info():
+  return "'/data' to show the content; '/lang' to detect in what language written; '/len' to measure the length."
 
 @app.route('/data')
 def get_data():
@@ -15,6 +21,10 @@ def get_data():
 def detec_lang():
   return l.langvowel(str(data))
 
+@app.route('/len')
+def json_len():
+  return str(len(json.dumps(data)))
+
 @app.route('/data', methods=['POST'])
 def add_data():
   data.append(request.get_json())
@@ -22,3 +32,4 @@ def add_data():
 
 if __name__ == '__main__':
     app.run(host='localhost',debug=True)
+    print("Index information is here -> http://localhost:5000/")
