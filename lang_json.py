@@ -13,6 +13,10 @@ data = []
 def info():
   return "'/data' to show the content; '/lang' to detect in what language written; '/len' to measure the length."
 
+@app.route('/auth')
+def message():
+   return "Login successful: please visit http://localhost:5000/ again."
+
 @app.route('/data')
 def get_data():
   return jsonify(data)
