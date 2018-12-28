@@ -10,6 +10,7 @@ from flask import Flask, render_template, jsonify, request
 import json
 import re
 import subprocess
+import webbrowser
 
 app = Flask(__name__)
 
@@ -35,6 +36,8 @@ def result():
       if key == authkey:
          auth_res = "Login successful"
          subprocess.call(['python', 'lang_json.py'])
+         url = "http://localhost:5000/"
+         webbrowser.open(url)
       else:
          auth_res = "Login failed"
       return "Result: {}".format(auth_res)
